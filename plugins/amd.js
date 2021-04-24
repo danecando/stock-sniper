@@ -14,7 +14,6 @@ async function amdListPage({
 }) {
   const page = await browser.newPage();
   try {
-    throw new Error();
     logger.info(`Checking for ${description} stock at AMD Direct`);
     await page.goto(url);
 
