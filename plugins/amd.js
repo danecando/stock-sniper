@@ -52,6 +52,10 @@ async function amdListPage({
 
     await closePage(page);
   } catch (err) {
+    page.screenshot({
+      path: `../screenshots/amdListPage_${description}_${Date.now()}`,
+    });
+
     const errMsg = `amdListPage ${description} - ${err}`;
     logger.error(errMsg);
     sendErrorAlert(errMsg);

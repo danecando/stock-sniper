@@ -5,7 +5,6 @@ const twilio = require('twilio')(
   process.env.TWILIO_AUTH_TOKEN,
 );
 const logger = require('log4js').getLogger();
-const plugins = require('./plugins');
 const config = require('./sniper.config');
 const { waitFor } = require('./lib/utils');
 
@@ -45,9 +44,9 @@ let runCounter = 1;
     slowMo: 250,
   });
   while (1) {
-    for (const item of config) {
-      await plugins[item.plugin]({
-        ...item,
+    for (const { plugin, ...options } of config) {
+      await plugin({
+        ...options,
         browser,
         sendStockAlert,
         sendErrorAlert,

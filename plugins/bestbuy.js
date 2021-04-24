@@ -92,6 +92,9 @@ async function bbListPage({
 
     await closePage(page);
   } catch (err) {
+    page.screenshot({
+      path: `../screenshots/bbListPage_${description}_${Date.now()}`,
+    });
     const errMsg = `bbListPage ${description} - ${err}`;
     logger.error(errMsg);
     sendErrorAlert(errMsg);
