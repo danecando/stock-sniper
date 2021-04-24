@@ -52,7 +52,7 @@ async function amdListPage({
 
     await closePage(page);
   } catch (err) {
-    page.screenshot({
+    await page.screenshot({
       path: `../screenshots/amdListPage_${description}_${Date.now()}.png`,
     });
 
