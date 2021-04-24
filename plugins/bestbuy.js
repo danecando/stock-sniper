@@ -93,7 +93,7 @@ async function bbListPage({
     await closePage(page);
   } catch (err) {
     await page.screenshot({
-      path: `../screenshots/bbListPage_${description}_${Date.now()}.png`,
+      path: `./screenshots/bbListPage_${description}_${Date.now()}.png`,
     });
     const errMsg = `bbListPage ${description} - ${err}`;
     logger.error(errMsg);

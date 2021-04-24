@@ -14,6 +14,7 @@ async function amdListPage({
 }) {
   const page = await browser.newPage();
   try {
+    throw new Error();
     logger.info(`Checking for ${description} stock at AMD Direct`);
     await page.goto(url);
 
@@ -53,7 +54,7 @@ async function amdListPage({
     await closePage(page);
   } catch (err) {
     await page.screenshot({
-      path: `../screenshots/amdListPage_${description}_${Date.now()}.png`,
+      path: `./screenshots/amdListPage_${description}_${Date.now()}.png`,
     });
 
     const errMsg = `amdListPage ${description} - ${err}`;
