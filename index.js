@@ -12,6 +12,7 @@ logger.level = 'debug';
 
 const messagingServiceSid = process.env.TWILIO_MSSID;
 const alertNumber = process.env.ALERT_NUMBER;
+const proxyServer = process.env.PROXY_SERVER;
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -42,6 +43,7 @@ let runCounter = 1;
   const browser = await puppeteer.launch({
     headless: isDev ? false : true,
     slowMo: 250,
+    args: [`--proxy-server=${proxyServer}`],
   });
   while (1) {
     for (const { plugin, ...options } of config) {
