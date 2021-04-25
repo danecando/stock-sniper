@@ -1,9 +1,13 @@
 const { amdListPage } = require('./amd');
 const { bbListPage } = require('./bestbuy');
-const { bhPhotoList } = require('./bhphoto');
+const { bhListPage } = require('./bhphoto');
+const { odListPage } = require('./officedepot');
+const { msiListPage } = require('./msi');
 
 module.exports = {
   amdListPage,
   bbListPage,
-  bhPhotoList,
+  bhListPage,
+  odListPage,
+  msiListPage,
 };

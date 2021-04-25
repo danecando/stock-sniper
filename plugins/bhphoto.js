@@ -1,10 +1,10 @@
 const { closePage, initPage } = require('../lib/page');
 
 module.exports = {
-  bhPhotoList,
+  bhListPage,
 };
 
-async function bhPhotoList({
+async function bhListPage({
   description,
   url,
   browser,

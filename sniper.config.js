@@ -1,17 +1,41 @@
-const { amdListPage, bbListPage, bhPhotoList } = require('./plugins');
+const {
+  amdListPage,
+  bbListPage,
+  bhListPage,
+  odListPage,
+  msiListPage,
+} = require('./plugins');
 
 module.exports = [
   {
     description: 'RTX 30 GPU',
     url:
-      'https://www.bhphotovideo.com/c/products/Graphic-Cards/ci/6567/N/3668461602?filters=fct_nvidia-geforce-series_5011%3Ageforce-rtx-3060%7Cgeforce-rtx-3060-ti%7Cgeforce-rtx-3070%7Cgeforce-rtx-3080%7Cgeforce-rtx-3090',
-    plugin: bhPhotoList,
+      'https://us-store.msi.com/index.php?route=product/category&path=75_76_246',
+    plugin: msiListPage,
   },
   {
-    description: 'RX 60 GPU',
+    description: 'RX 6 GPU',
+    url:
+      'https://us-store.msi.com/index.php?route=product/category&path=75_77_277',
+    plugin: msiListPage,
+  },
+  {
+    description: 'RTX 30 GPU',
+    url:
+      'https://www.officedepot.com/catalog/search.do?Nty=1&Ntx=mode+matchpartialmax&Ntk=all&Ntt=pny+geforce+rtx+30&N=5&cbxRefine=1462159',
+    plugin: odListPage,
+  },
+  {
+    description: 'RTX 30 GPU',
+    url:
+      'https://www.bhphotovideo.com/c/products/Graphic-Cards/ci/6567/N/3668461602?filters=fct_nvidia-geforce-series_5011%3Ageforce-rtx-3060%7Cgeforce-rtx-3060-ti%7Cgeforce-rtx-3070%7Cgeforce-rtx-3080%7Cgeforce-rtx-3090',
+    plugin: bhListPage,
+  },
+  {
+    description: 'RX 6 GPU',
     url:
       'https://www.bhphotovideo.com/c/products/Graphic-Cards/ci/6567/N/3668461602?filters=fct_amd-radeon-series_5012%3Aradeon-rx-6700-xt%7Cradeon-rx-6800%7Cradeon-rx-6800-xt%7Cradeon-rx-6900-xt',
-    plugin: bhPhotoList,
+    plugin: bhListPage,
   },
   {
     description: 'GPU',
