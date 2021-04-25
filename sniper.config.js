@@ -4,9 +4,34 @@ const {
   bhListPage,
   odListPage,
   msiListPage,
+  staplesListPage,
 } = require('./plugins');
 
 module.exports = [
+  {
+    description: 'RTX 3060 GPU',
+    url:
+      'https://www.staples.com/rtx+3060/directory_rtx%25203060?fids=Department_3A_22Graphics!Cards_22',
+    plugin: staplesListPage,
+  },
+  {
+    description: 'RTX 3070 GPU',
+    url:
+      'https://www.staples.com/rtx+3070/directory_rtx%25203070?fids=Department_3A_22Graphics!Cards_22',
+    plugin: staplesListPage,
+  },
+  {
+    description: 'RTX 3080 GPU',
+    url:
+      'https://www.staples.com/rtx+3080/directory_rtx%25203080?fids=Department_3A_22Graphics!Cards_22',
+    plugin: staplesListPage,
+  },
+  {
+    description: 'RTX 3090 GPU',
+    url:
+      'https://www.staples.com/rtx+3090/directory_rtx%25203090?fids=Department_3A_22Graphics!Cards_22',
+    plugin: staplesListPage,
+  },
   {
     description: 'RTX 30 GPU',
     url:

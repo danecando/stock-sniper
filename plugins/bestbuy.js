@@ -45,7 +45,7 @@ async function bbListPage({
     let inStockItems = [];
     while (currentPage <= pageCount) {
       logger.debug(
-        `Scanning page ${currentPage} of ${pageCount}. ${itemCount})}`,
+        `Scanning page ${currentPage} of ${pageCount}. ${itemCount}`,
       );
 
       if (currentPage != 1) {
