@@ -1,4 +1,4 @@
-const { closePage } = require('../lib/page');
+const { closePage, initPage } = require('../lib/page');
 
 module.exports = {
   amdListPage,
@@ -17,8 +17,7 @@ async function amdListPage({
     logger.info(`Checking for ${description} stock at AMD Direct`);
     await page.goto(url);
 
-    logger.debug('Waiting for page to load');
-    await page.waitForSelector('#block-amd-content');
+    await initPage(page, '#block-amd-content');
 
     const inStockItems = await page.$$eval(
       '.view-content .views-row',
