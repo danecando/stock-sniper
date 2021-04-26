@@ -11,8 +11,8 @@ async function msiListPage({
   sendStockAlert,
   sendErrorAlert,
   logger,
+  page,
 }) {
-  const page = await browser.newPage();
   try {
     logger.info(`Checking for ${description} stock at MSI Store`);
     await page.goto(url);
@@ -72,16 +72,10 @@ async function msiListPage({
     if (inStockItems.length > 0) {
       sendStockAlert(completionMessage, inStockItems);
     }
-
-    await closePage(page);
   } catch (err) {
     await page.screenshot({
       path: `./screenshots/msiListPage_${description}_${Date.now()}.png`,
     });
-
-    const errMsg = `msiListPage ${description} - ${err}`;
-    logger.error(errMsg);
-    sendErrorAlert(errMsg);
-    await closePage(page);
+    logger.error(`msiListPage ${description} - ${err}`);
   }
 }

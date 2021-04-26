@@ -11,8 +11,8 @@ async function bbListPage({
   sendStockAlert,
   sendErrorAlert,
   logger,
+  page,
 }) {
-  const page = await browser.newPage();
   try {
     logger.info(`Checking for ${description} stock at Best Buy`);
     await page.goto(url);
@@ -88,15 +88,10 @@ async function bbListPage({
     if (inStockItems.length > 0) {
       sendStockAlert(completionMessage, inStockItems);
     }
-
-    await closePage(page);
   } catch (err) {
     await page.screenshot({
       path: `./screenshots/bbListPage_${description}_${Date.now()}.png`,
     });
-    const errMsg = `bbListPage ${description} - ${err}`;
-    logger.error(errMsg);
-    sendErrorAlert(errMsg);
-    await closePage(page);
+    logger.error(`bbListPage ${description} - ${err}`);
   }
 }

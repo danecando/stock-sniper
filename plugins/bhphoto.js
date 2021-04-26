@@ -11,9 +11,8 @@ async function bhListPage({
   sendStockAlert,
   sendErrorAlert,
   logger,
+  page,
 }) {
-  const page = await browser.newPage();
-
   try {
     logger.info(`Checking for ${description} stock at B&H Photo`);
     await page.goto(url);
@@ -80,16 +79,10 @@ async function bhListPage({
     if (inStockItems.length > 0) {
       sendStockAlert(completionMessage, inStockItems);
     }
-
-    await closePage(page);
   } catch (err) {
     await page.screenshot({
       path: `./screenshots/bhListPage_${description}_${Date.now()}.png`,
     });
-
-    const errMsg = `bhListPage ${description} - ${err}`;
-    logger.error(errMsg);
-    sendErrorAlert(errMsg);
-    await closePage(page);
+    logger.error(`bhListPage ${description} - ${err}`);
   }
 }

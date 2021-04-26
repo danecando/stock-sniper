@@ -13,6 +13,8 @@
     "dotenv": "^8.2.0",
     "log4js": "^6.3.0",
     "puppeteer": "^9.0.0",
+    "puppeteer-extra": "^3.1.18",
+    "puppeteer-extra-plugin-stealth": "^2.7.7",
     "twilio": "^3.61.0"
   }
 }

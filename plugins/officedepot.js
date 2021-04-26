@@ -11,8 +11,8 @@ async function odListPage({
   sendStockAlert,
   sendErrorAlert,
   logger,
+  page,
 }) {
-  const page = await browser.newPage();
   try {
     logger.info(`Checking for ${description} stock at Office Depot`);
     await page.goto(url);
@@ -46,16 +46,10 @@ async function odListPage({
     if (inStockItems.length > 0) {
       sendStockAlert(completionMessage, inStockItems);
     }
-
-    await closePage(page);
   } catch (err) {
     await page.screenshot({
       path: `./screenshots/odListPage_${description}_${Date.now()}.png`,
     });
-
-    const errMsg = `odListPage ${description} - ${err}`;
-    logger.error(errMsg);
-    sendErrorAlert(errMsg);
-    await closePage(page);
+    logger.error(`odListPage ${description} - ${err}`);
   }
 }
