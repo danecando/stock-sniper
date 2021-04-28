@@ -4,6 +4,8 @@ const { bhListPage } = require('./bhphoto');
 const { odListPage } = require('./officedepot');
 const { msiListPage } = require('./msi');
 const { staplesListPage } = require('./staples');
+const { adoramaListPage } = require('./adorama');
+const { gamestopListPage } = require('./gamestop');
 
 module.exports = {
   amdListPage,
@@ -12,4 +14,6 @@ module.exports = {
   odListPage,
   msiListPage,
   staplesListPage,
+  adoramaListPage,
+  gamestopListPage,
 };

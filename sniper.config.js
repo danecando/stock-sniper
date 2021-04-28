@@ -5,9 +5,17 @@ const {
   odListPage,
   msiListPage,
   staplesListPage,
+  adoramaListPage,
+  gamestopListPage,
 } = require('./plugins');
 
 module.exports = [
+  {
+    store: 'GameStop',
+    description: 'RTX 3060 GPU',
+    url: 'https://www.gamestop.com/search/?q=rtx+3060&lang=default',
+    plugin: gamestopListPage,
+  },
   {
     store: 'Staples',
     description: 'RTX 3060 GPU',
@@ -51,6 +59,12 @@ module.exports = [
     plugin: msiListPage,
   },
   {
+    store: 'GameStop',
+    description: 'RTX 3070 GPU',
+    url: 'https://www.gamestop.com/search/?q=rtx+3070&lang=default',
+    plugin: gamestopListPage,
+  },
+  {
     store: 'Office Depot',
     description: 'RTX 30 GPU',
     url:
@@ -65,13 +79,6 @@ module.exports = [
     plugin: bhListPage,
   },
   {
-    store: 'BH Photo',
-    description: 'RX 6 GPU',
-    url:
-      'https://www.bhphotovideo.com/c/products/Graphic-Cards/ci/6567/N/3668461602?filters=fct_amd-radeon-series_5012%3Aradeon-rx-6700-xt%7Cradeon-rx-6800%7Cradeon-rx-6800-xt%7Cradeon-rx-6900-xt',
-    plugin: bhListPage,
-  },
-  {
     store: 'AMD Direct',
     description: 'GPU',
     url: 'https://www.amd.com/en/direct-buy/us',
@@ -81,19 +88,20 @@ module.exports = [
     store: 'BestBuy',
     description: 'GPU',
     url:
-      'https://www.bestbuy.com/site/computer-cards-components/video-graphics-cards/abcat0507002.c?id=abcat0507002&qp=gpusv_facet%3DGraphics%20Processing%20Unit%20(GPU)~AMD%20Radeon%20RX%206700%20XT%5Egpusv_facet%3DGraphics%20Processing%20Unit%20(GPU)~AMD%20Radeon%20RX%206800%5Egpusv_facet%3DGraphics%20Processing%20Unit%20(GPU)~AMD%20Radeon%20RX%206800%20XT%5Egpusv_facet%3DGraphics%20Processing%20Unit%20(GPU)~AMD%20Radeon%20RX%206900%20XT%5Egpusv_facet%3DGraphics%20Processing%20Unit%20(GPU)~NVIDIA%20GeForce%20RTX%203060%5Egpusv_facet%3DGraphics%20Processing%20Unit%20(GPU)~NVIDIA%20GeForce%20RTX%203060%20Ti%5Egpusv_facet%3DGraphics%20Processing%20Unit%20(GPU)~NVIDIA%20GeForce%20RTX%203070%5Egpusv_facet%3DGraphics%20Processing%20Unit%20(GPU)~NVIDIA%20GeForce%20RTX%203080%5Egpusv_facet%3DGraphics%20Processing%20Unit%20(GPU)~NVIDIA%20GeForce%20RTX%203090',
+      'https://www.bestbuy.com/site/computer-cards-components/video-graphics-cards/abcat0507002.c?id=abcat0507002&qp=gpusv_facet%3DGraphics%20Processing%20Unit%20(GPU)~AMD%20Radeon%20RX%206800%20XT%5Egpusv_facet%3DGraphics%20Processing%20Unit%20(GPU)~NVIDIA%20GeForce%20RTX%203060%20Ti%5Egpusv_facet%3DGraphics%20Processing%20Unit%20(GPU)~NVIDIA%20GeForce%20RTX%203070%5Egpusv_facet%3DGraphics%20Processing%20Unit%20(GPU)~NVIDIA%20GeForce%20RTX%203080',
     plugin: bbListPage,
   },
-  // {
-  //   description: 'Xbox Series X',
-  //   url:
-  //     'https://www.bestbuy.com/site/xbox-series-x-and-s/xbox-series-x-and-s-consoles/pcmcat1586900952752.c?id=pcmcat1586900952752',
-  //   plugin: bbListPage,
-  // },
-  // {
-  //   description: 'PS5',
-  //   url:
-  //     'https://www.bestbuy.com/site/playstation-5/ps5-consoles/pcmcat1587395025973.c?id=pcmcat1587395025973',
-  //   plugin: bbListPage,
-  // },
+  {
+    store: 'GameStop',
+    description: 'RTX 3080 GPU',
+    url: 'https://www.gamestop.com/search/?q=rtx+3080&lang=default',
+    plugin: gamestopListPage,
+  },
+  {
+    store: 'Adorama',
+    description: 'RTX 3080 GPU',
+    url:
+      'https://www.adorama.com/l/Computers/Computer-Components/Video-and-Graphics-Cards/?searchinfo=rtx%203080&sel=Item-Condition_New-Items',
+    plugin: adoramaListPage,
+  },
 ];

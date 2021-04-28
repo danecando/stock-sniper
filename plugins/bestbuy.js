@@ -60,7 +60,9 @@ async function bbListPage({ description, url, logger, page }) {
             link,
             price,
             available:
-              buttonText === 'add to cart' || buttonText === 'pre-order',
+              buttonText === 'add to cart' ||
+              buttonText === 'pre-order' ||
+              buttonText === 'see details',
           };
         })
         .filter((x) => x.available);
