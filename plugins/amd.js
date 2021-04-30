@@ -22,7 +22,6 @@ async function amdListPage({ description, url, page }) {
           return {
             title,
             isCPU,
-            price,
             inStock,
             link: url,
           };

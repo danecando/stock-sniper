@@ -6,6 +6,7 @@ const { msiListPage } = require('./msi');
 const { staplesListPage } = require('./staples');
 const { adoramaListPage } = require('./adorama');
 const { gamestopListPage } = require('./gamestop');
+const { amazonItemPage } = require('./amazon');
 
 module.exports = {
   amdListPage,
@@ -16,4 +17,5 @@ module.exports = {
   staplesListPage,
   adoramaListPage,
   gamestopListPage,
+  amazonItemPage,
 };

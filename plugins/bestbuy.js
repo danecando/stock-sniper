@@ -40,7 +40,7 @@ async function bbListPage({ description, url, logger, page }) {
       await page.goto(pageLinks[currentPage]);
     }
 
-    await page.waitForTimeout(5000);
+    await page.waitForTimeout(3500);
     await autoScroll(page);
 
     const items = await page.$$eval('li.sku-item', (els) => {
